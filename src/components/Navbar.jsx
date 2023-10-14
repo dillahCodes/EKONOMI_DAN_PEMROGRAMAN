@@ -80,12 +80,14 @@ const Navbar = () => {
           </Link>
         ))}
         <button className="relative flex justify-center items-center dark:hover:text-[#F5F5F5] dark:text-slate-300 w-40 overflow-hidden mt-2 md:mt-0 text-[#F5F5F5] transition-all bg-[#4cb0af] border-[#4cb0af] rounded-md shadow-2xl h-9 before:ease before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-[#F5F5F5] before:opacity-10 before:duration-700 hover:shadow-[#4cb0af] hover:before:-translate-x-40">
-          <span className="flex justify-center gap-x-3">
-            follow me{" "}
-            <a className="text-2xl">
-              <GrInstagram />
-            </a>
-          </span>
+          <a href="https://www.instagram.com/_dillah.codes/">
+            <span className="flex items-center justify-center gap-x-3 ">
+              <span> follow me</span>
+              <span>
+                <GrInstagram />
+              </span>
+            </span>
+          </a>
         </button>
       </ul>
       <NavbarToggle navbarConditionHandler={navbarConditionHandler} />
