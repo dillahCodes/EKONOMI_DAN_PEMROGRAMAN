@@ -89,7 +89,7 @@ const DemandFunctionPage = () => {
                     <MathComponent tex={String.raw` Qd = ${((Q2 - Q1) * -P1 + Math.abs((P2 - P1) * -Q1)) / (P2 - P1)}`} />
                   </div>
                 </div>
-                <div className="md:w-[600px] w-[300px]">
+                <div className="bg-white rounded-md sm:w-[450px]">
                   <VictoryChart width={600} height={400} padding={{ top: 40, bottom: 60, left: 60, right: 40 }}>
                     {/* Sumbu X (Quantity) */}
                     <VictoryAxis

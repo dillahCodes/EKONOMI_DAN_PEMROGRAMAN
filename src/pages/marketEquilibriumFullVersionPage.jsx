@@ -26,14 +26,6 @@ const MarketEquilibriumFullVersion = () => {
     Qs1 = allValues[2].Qs1;
     Qs2 = allValues[2].Qs2;
   }
-  console.info({
-    Price1: Price1,
-    Price2: Price2,
-    Qd1: Qd1,
-    Qd2: Qd2,
-    Qs1: Qs1,
-    Qs2: Qs2,
-  });
 
   let resultQ0Demand = Math.abs(((Qd2 - Qd1) * -Price1 + Math.abs((Price2 - Price1) * -Qd1)) / (Price2 - Price1) / Math.abs((Qd2 - Qd1) / (Price2 - Price1)));
   let resultP0Demand = Math.abs(((Qd2 - Qd1) * -Price1 + Math.abs((Price2 - Price1) * -Qd1)) / (Price2 - Price1));
@@ -42,22 +34,32 @@ const MarketEquilibriumFullVersion = () => {
   let QdFunctionResult = [{ a: `${((Qd2 - Qd1) * -Price1 + Math.abs((Price2 - Price1) * -Qd1)) / (Price2 - Price1)}`, b: `${(Qd2 - Qd1) / (Price2 - Price1)}` }];
   let QsFunctionResult = [{ a: `${((Qs2 - Qs1) * -Price1 + Math.abs((Price2 - Price1) * -Qs1)) / (Price2 - Price1)}`, b: `${(Qs2 - Qs1) / (Price2 - Price1)}` }];
   let Final_P = ` ${(parseFloat(QdFunctionResult[0].a) + parseFloat(Math.abs(QsFunctionResult[0].a))) / (parseFloat(Math.abs(QdFunctionResult[0].b)) + parseFloat(QsFunctionResult[0].b))}`;
-  console.info(resultP0Supply);
+  // Proses perhitungan keseimbangan pasar di sini
+  const equilibriumPrice = parseFloat(Final_P);
+  const equilibriumQuantity = `${parseFloat(QsFunctionResult[0].a) + parseFloat(QsFunctionResult[0].b) * Final_P}`;
   const DemandFunctionData = [
     { Quantity: resultP0Demand, Price: 0 },
     { Quantity: 0, Price: resultQ0Demand },
   ];
+
+  let QdTerbesar;
+  let Qsterbesar;
+  let QuantityTerbesar;
+  let PriceTerbesar;
+  parseFloat(Price1) > parseFloat(Price2) ? (PriceTerbesar = parseFloat(Price1)) : (PriceTerbesar = parseFloat(Price2));
+  parseFloat(Qd1) > parseFloat(Qd2) ? (QdTerbesar = parseFloat(Qd1)) : (QdTerbesar = parseFloat(Qd2));
+  parseFloat(Qs1) > parseFloat(Qs2) ? (Qsterbesar = parseFloat(Qs1)) : (Qsterbesar = parseFloat(Qs2));
+  QdTerbesar > Qsterbesar ? (QuantityTerbesar = QdTerbesar) : (QuantityTerbesar = Qsterbesar);
+
   const supplyFunctionData = [
     { Quantity: 0, Price: resultQ0Supply },
     { Quantity: resultP0Supply, Price: 0 },
-    { Quantity: parseFloat(Qs1), Price: parseFloat(Price1) },
-    { Quantity: parseFloat(Qs2), Price: parseFloat(Price2) },
+    { Quantity: parseFloat(equilibriumQuantity), Price: parseFloat(equilibriumPrice) },
+    { Quantity: Math.floor(QuantityTerbesar), Price: Math.floor(PriceTerbesar) },
+    { Quantity: Math.floor(QuantityTerbesar) + QuantityTerbesar * (40 / 100), Price: Math.floor(PriceTerbesar) + PriceTerbesar * (10 / 100) },
   ];
 
-  // Proses perhitungan keseimbangan pasar di sini
-  const equilibriumPrice = Final_P;
-  const equilibriumQuantity = `${parseFloat(QsFunctionResult[0].a) + parseFloat(QsFunctionResult[0].b) * Final_P}`;
-
+  console.info(supplyFunctionData);
   return (
     <>
       <Navbar />
@@ -114,14 +116,14 @@ const MarketEquilibriumFullVersion = () => {
                   <MathComponent tex={String.raw` Qd = ${((Qd2 - Qd1) * -Price1 + Math.abs((Price2 - Price1) * -Qd1)) / (Price2 - Price1)}`} />
                 </div>
               </div>
-              <div className="md:w-[600px] w-[300px]">
-                <VictoryChart width={600} height={400} padding={{ top: 40, bottom: 60, left: 60, right: 40 }}>
+              <div className="bg-white rounded-md sm:w-[450px] ">
+                <VictoryChart width={600} height={400}>
                   {/* Sumbu X (Quantity) */}
                   <VictoryAxis
                     label="Quantity (Q)"
-                    tickValues={[[0], [Qd1], [Qd2], [resultP0Demand]]} // Hapus label pada sumbu X
+                    tickValues={[resultP0Demand]} // Hapus label pada sumbu X
                     style={{
-                      axisLabel: { padding: 36 }, // Jarak antara label sumbu X dengan chart
+                      axisLabel: { padding: 20 }, // Jarak antara label sumbu X dengan chart
                       grid: { stroke: "lightgray", strokeWidth: 2, strokeOpacity: 0.4 },
                     }}
                   />
@@ -129,9 +131,9 @@ const MarketEquilibriumFullVersion = () => {
                   <VictoryAxis
                     dependentAxis
                     label="Price (P)"
-                    tickValues={[[Price1], [Price2], [resultQ0Demand]]} // Hapus label pada sumbu Y
+                    tickValues={[resultQ0Demand]} // Hapus label pada sumbu Y
                     style={{
-                      axisLabel: { padding: 43 }, // Jarak antara label sumbu Y dengan chart
+                      axisLabel: { padding: 20 }, // Jarak antara label sumbu Y dengan chart
                       grid: { stroke: "lightgray", strokeWidth: 2, strokeOpacity: 0.4 },
                     }}
                   />
@@ -145,6 +147,7 @@ const MarketEquilibriumFullVersion = () => {
                     }}
                   />
                   <VictoryLabel
+                    style={{ fontSize: 12, fill: "red" }}
                     text={`Qd = ${((Qd2 - Qd1) * -Price1 + Math.abs((Price2 - Price1) * -Qd1)) / (Price2 - Price1)} ${(Qd2 - Qd1) / (Price2 - Price1) >= 0 ? "+" : ""} ${(Qd2 - Qd1) / (Price2 - Price1)}P`} // Teks yang ingin ditampilkan
                     x={350} // Koordinat x label
                     y={150} // Koordinat y label
@@ -189,16 +192,16 @@ const MarketEquilibriumFullVersion = () => {
                   <MathComponent tex={String.raw`Qs =  ${((Qs2 - Qs1) * -Price1 + Math.abs((Price2 - Price1) * -Qs1)) / (Price2 - Price1)}`} />
                 </div>
               </div>
-              <div className="md:w-[600px] w-[300px]">
+              <div className="  bg-white rounded-md sm:w-[450px]">
                 {/* chart di isni */}
                 <VictoryChart width={600} height={400}>
                   {/* Sumbu X (Quantity) */}
                   <VictoryAxis
                     label="Quantity (Q)"
                     tickFormat={(tick) => `${tick}`} // Format label sumbu X
-                    tickValues={[[supplyFunctionData[1].Quantity], [0], [Qs1], [Qs2]]} // Hapus label pada sumbu Y
+                    tickValues={[supplyFunctionData[1].Quantity]} // Hapus label pada sumbu Y
                     style={{
-                      axisLabel: { padding: 36 }, // Jarak antara label sumbu X dengan chart
+                      axisLabel: { padding: 20 }, // Jarak antara label sumbu X dengan chart
                       grid: { stroke: "lightgray", strokeWidth: 2, strokeOpacity: 0.4 },
                     }}
                   />
@@ -207,7 +210,7 @@ const MarketEquilibriumFullVersion = () => {
                     dependentAxis
                     label="Price (P)"
                     tickFormat={(tick) => `${tick}`} // Format label sumbu Y
-                    tickValues={[[Price1], [Price2], [supplyFunctionData[0].Price]]} // Hapus label pada sumbu Y
+                    tickValues={[supplyFunctionData[0].Price]} // Hapus label pada sumbu Y
                     style={{
                       axisLabel: { padding: 43 }, // Jarak antara label sumbu Y dengan chart
                       grid: { stroke: "lightgray", strokeWidth: 2, strokeOpacity: 0.4 },
@@ -222,6 +225,7 @@ const MarketEquilibriumFullVersion = () => {
                       data: { stroke: "green" }, // Warna garis kurva
                     }}
                   />
+                  <VictoryLabel text={`Qs = ${((Qs2 - Qs1) * -Price1 + Math.abs((Price2 - Price1) * -Qs1)) / (Price2 - Price1)} ${(Qs2 - Qs1) / (Price2 - Price1) >= 0 ? "+" : ""} ${(Qs2 - Qs1) / (Price2 - Price1)}P`} x={500} y={150} textAnchor="middle" style={{ fontSize: 12, fill: "green" }} />
                 </VictoryChart>
               </div>
             </div>
@@ -250,7 +254,7 @@ const MarketEquilibriumFullVersion = () => {
                   <MathComponent tex={String.raw`Qs = ${parseFloat(QsFunctionResult[0].a) + parseFloat(QsFunctionResult[0].b) * Final_P}`} />
                 </div>
               </div>
-              <div className="md:w-[600px] w-[300px]">
+              <div className=" bg-white rounded-md sm:w-[450px]">
                 {/* chart di isni */}
                 <VictoryChart width={600} height={400}>
                   {/* Kurva Permintaan (Demand) */}
@@ -293,7 +297,9 @@ const MarketEquilibriumFullVersion = () => {
                     }}
                   />
                   {/* Label Keseimbangan Pasar */}
-                  <VictoryLabel text={`Equilibrium\nPrice: $${equilibriumPrice}\nQuantity: ${equilibriumQuantity}`} x={490} y={100} textAnchor="middle" style={{ fontSize: 13 }} />
+                  <VictoryLabel text={`Equilibrium\nPrice: $${equilibriumPrice}\nQuantity: ${equilibriumQuantity}`} x={110} y={100} textAnchor="middle" style={{ fontSize: 12 }} />
+                  <VictoryLabel text={`Qs = ${((Qs2 - Qs1) * -Price1 + Math.abs((Price2 - Price1) * -Qs1)) / (Price2 - Price1)} ${(Qs2 - Qs1) / (Price2 - Price1) >= 0 ? "+" : ""} ${(Qs2 - Qs1) / (Price2 - Price1)}P`} x={110} y={150} textAnchor="middle" style={{ fontSize: 12, fill: "green" }} />
+                  <VictoryLabel text={`Qd = ${((Qd2 - Qd1) * -Price1 + Math.abs((Price2 - Price1) * -Qd1)) / (Price2 - Price1)} ${(Qd2 - Qd1) / (Price2 - Price1) >= 0 ? "+" : ""} ${(Qd2 - Qd1) / (Price2 - Price1)}P`} x={110} y={165} textAnchor="middle" style={{ fontSize: 12, fill: "red" }} />
                 </VictoryChart>
               </div>
             </div>

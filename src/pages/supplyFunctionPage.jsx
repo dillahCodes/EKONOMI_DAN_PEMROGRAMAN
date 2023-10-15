@@ -28,6 +28,7 @@ const SupllyFunctionPage = () => {
   const data = [
     { Q: 0, P: finalPriceIfQ0 },
     { Q: finalQuantityIfP0, P: 0 },
+    { Q: Q1, P: P1 },
   ];
 
   return (
@@ -80,15 +81,15 @@ const SupllyFunctionPage = () => {
                     <MathComponent tex={String.raw`Qs =  ${((Q2 - Q1) * -P1 + Math.abs((P2 - P1) * -Q1)) / (P2 - P1)}`} />
                   </div>
                 </div>
-                <div className="w-[400px]">
+                <div className="bg-white rounded-md sm:w-[450px]">
                   <VictoryChart width={600} height={400}>
                     {/* Sumbu X (Quantity) */}
                     <VictoryAxis
                       label="Quantity (Q)"
                       tickFormat={(tick) => `${tick}`} // Format label sumbu X
-                      tickValues={[data[1].Q]} // Hapus label pada sumbu Y
+                      tickValues={[data[1].Q, 0]} // Hapus label pada sumbu Y
                       style={{
-                        axisLabel: { padding: 36 }, // Jarak antara label sumbu X dengan chart
+                        axisLabel: { padding: 25 }, // Jarak antara label sumbu X dengan chart
                       }}
                     />
                     {/* Sumbu Y (Price) */}
@@ -98,7 +99,7 @@ const SupllyFunctionPage = () => {
                       tickFormat={(tick) => `${tick}`} // Format label sumbu Y
                       tickValues={[data[0].P]} // Hapus label pada sumbu Y
                       style={{
-                        axisLabel: { padding: 43 }, // Jarak antara label sumbu Y dengan chart
+                        axisLabel: { padding: 25 }, // Jarak antara label sumbu Y dengan chart
                       }}
                     />
                     {/* Kurva Fungsi Penawaran */}

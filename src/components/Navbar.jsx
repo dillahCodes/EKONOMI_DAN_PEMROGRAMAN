@@ -49,10 +49,11 @@ const Navbar = () => {
     };
   }, [userTheme]);
 
-  const scrollToElement = (elementId) => {
+  const scrollToElement = (elementId, offset) => {
     const element = document.getElementById(elementId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const offsetTop = element.offsetTop - offset;
+      window.scrollTo({ top: offsetTop, behavior: "smooth" });
     }
   };
 
@@ -74,7 +75,7 @@ const Navbar = () => {
       <ul className="md:w-[80%] pl-2 my-3 text-lg text-black capitalize md:my-0 md:items-center md:flex md:justify-around font-Kanit dark:text-slate-300">
         {navItems.map((item) => (
           <Link to={item.URL} key={item.name}>
-            <li className="cursor-pointer md:my-0 hover:bg-[#4cb0af] py-2 px-2 my-10 rounded-md hover:text-[#F5F5F5] transition-all duration-300" onClick={() => scrollToElement(item.to)}>
+            <li className="cursor-pointer md:my-0 hover:bg-[#4cb0af] py-2 px-2 my-10 rounded-md hover:text-[#F5F5F5] transition-all duration-300" onClick={() => scrollToElement(item.to, 100)}>
               {item.name}
             </li>
           </Link>

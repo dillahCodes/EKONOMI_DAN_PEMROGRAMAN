@@ -82,7 +82,7 @@ const TableComponent = (props) => {
 
           <div className="text-sm font-bold capitalize">
             <p className="text-red-500 ">*jika jawaban tidak sesuai atau error laporkan melalui instagram saya</p>
-            <p className="text-red-500 ">*(If the answer is not appropriate or has an error, please report it to my Instagram)</p>
+            <p className="text-red-500">*If your answers do not match or error report it through my Instagram</p>
           </div>
 
           <div className="modal-action">
