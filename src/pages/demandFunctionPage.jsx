@@ -36,7 +36,7 @@ const DemandFunctionPage = () => {
   return (
     <>
       <Navbar />
-      <div className="flex items-center flex-col gap-y-5 justify-center w-full  text-black dark:text-slate-300 p-5 pt-10 mt-16  bg-[#F5F5F5] dark:bg-slate-800 transition-all  ease-out duration-700">
+      <div className="flex items-center flex-col gap-y-5   justify-center w-full  text-black dark:text-slate-300 sm:p-12 p-5 mt-16  bg-[#F5F5F5] dark:bg-slate-800 transition-all  ease-out duration-700">
         <h1 className="text-xl text-black sm:text-2xl md:text-3xl font-Oswald dark:text-slate-300">demand function (fungsi permintaan)</h1>
         <div className="w-full p-5 gap-y-5 flex flex-col md:w-[80%] lg:w-[70%] rounded-lg bg-[#ebebeb]  dark:bg-gray-700 shadow-md dark:shadow-black ">
           <TableComponent tableFor={"quantity demand (jumlah permintaan (Qd) )"} allValues={getAllValuesFromTableHandler} />

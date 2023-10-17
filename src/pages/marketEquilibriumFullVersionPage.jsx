@@ -42,24 +42,13 @@ const MarketEquilibriumFullVersion = () => {
     { Quantity: 0, Price: resultQ0Demand },
   ];
 
-  let QdTerbesar;
-  let Qsterbesar;
-  let QuantityTerbesar;
-  let PriceTerbesar;
-  parseFloat(Price1) > parseFloat(Price2) ? (PriceTerbesar = parseFloat(Price1)) : (PriceTerbesar = parseFloat(Price2));
-  parseFloat(Qd1) > parseFloat(Qd2) ? (QdTerbesar = parseFloat(Qd1)) : (QdTerbesar = parseFloat(Qd2));
-  parseFloat(Qs1) > parseFloat(Qs2) ? (Qsterbesar = parseFloat(Qs1)) : (Qsterbesar = parseFloat(Qs2));
-  QdTerbesar > Qsterbesar ? (QuantityTerbesar = QdTerbesar) : (QuantityTerbesar = Qsterbesar);
-
   const supplyFunctionData = [
     { Quantity: 0, Price: resultQ0Supply },
     { Quantity: resultP0Supply, Price: 0 },
     { Quantity: parseFloat(equilibriumQuantity), Price: parseFloat(equilibriumPrice) },
-    { Quantity: Math.floor(QuantityTerbesar), Price: Math.floor(PriceTerbesar) },
-    { Quantity: Math.floor(QuantityTerbesar) + QuantityTerbesar * (40 / 100), Price: Math.floor(PriceTerbesar) + PriceTerbesar * (10 / 100) },
+    { Quantity: parseFloat(equilibriumQuantity) * 2, Price: parseFloat(equilibriumPrice) + (parseFloat(equilibriumPrice) - resultQ0Supply) },
   ];
-
-  console.info(supplyFunctionData);
+  console.info(resultQ0Supply + parseFloat(equilibriumPrice));
   return (
     <>
       <Navbar />
@@ -298,8 +287,8 @@ const MarketEquilibriumFullVersion = () => {
                   />
                   {/* Label Keseimbangan Pasar */}
                   <VictoryLabel text={`Equilibrium\nPrice: $${equilibriumPrice}\nQuantity: ${equilibriumQuantity}`} x={110} y={100} textAnchor="middle" style={{ fontSize: 12 }} />
-                  <VictoryLabel text={`Qs = ${((Qs2 - Qs1) * -Price1 + Math.abs((Price2 - Price1) * -Qs1)) / (Price2 - Price1)} ${(Qs2 - Qs1) / (Price2 - Price1) >= 0 ? "+" : ""} ${(Qs2 - Qs1) / (Price2 - Price1)}P`} x={110} y={150} textAnchor="middle" style={{ fontSize: 12, fill: "green" }} />
-                  <VictoryLabel text={`Qd = ${((Qd2 - Qd1) * -Price1 + Math.abs((Price2 - Price1) * -Qd1)) / (Price2 - Price1)} ${(Qd2 - Qd1) / (Price2 - Price1) >= 0 ? "+" : ""} ${(Qd2 - Qd1) / (Price2 - Price1)}P`} x={110} y={165} textAnchor="middle" style={{ fontSize: 12, fill: "red" }} />
+                  <VictoryLabel text={`Qs = ${((Qs2 - Qs1) * -Price1 + Math.abs((Price2 - Price1) * -Qs1)) / (Price2 - Price1)} ${(Qs2 - Qs1) / (Price2 - Price1) >= 0 ? "+" : ""} ${(Qs2 - Qs1) / (Price2 - Price1)}P`} x={490} y={150} textAnchor="middle" style={{ fontSize: 12, fill: "green" }} />
+                  <VictoryLabel text={`Qd = ${((Qd2 - Qd1) * -Price1 + Math.abs((Price2 - Price1) * -Qd1)) / (Price2 - Price1)} ${(Qd2 - Qd1) / (Price2 - Price1) >= 0 ? "+" : ""} ${(Qd2 - Qd1) / (Price2 - Price1)}P`} x={490} y={165} textAnchor="middle" style={{ fontSize: 12, fill: "red" }} />
                 </VictoryChart>
               </div>
             </div>
