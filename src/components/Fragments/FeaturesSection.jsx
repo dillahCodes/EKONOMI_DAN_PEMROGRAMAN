@@ -18,13 +18,13 @@ const FeaturesSection = () => {
       <h1 className="relative mb-5 text-center before:absolute before:w-full before:h-[3px]   before:bg-[#4cb0af] before:bottom-0 pb-1 capitalize font-Kanit text-3xl text-black dark:text-slate-300">features</h1>
       <div className="flex mx-auto gap-x-5">
         <div className="flex flex-wrap items-center justify-center text-xs gap-x-2">
-          <span className="block w-3 h-3 bg-green-500 rounded-full"></span> <span className="text-[10px] font-medium capitalize font-Oswald dark:text-slate-300">available</span>
+          <span className="block w-3 h-3 bg-green-500 rounded-full"></span> <span className="text-[10px] text-black font-medium capitalize font-Oswald dark:text-slate-300">available</span>
         </div>
         <div className="flex flex-wrap items-center justify-center text-sm gap-x-2">
-          <span className="block w-3 h-3 bg-red-500 rounded-full"></span> <span className="font-medium text-[10px] capitalize font-Oswald dark:text-slate-300">maintenance</span>
+          <span className="block w-3 h-3 bg-red-500 rounded-full"></span> <span className="font-medium text-[10px] text-black capitalize font-Oswald dark:text-slate-300">maintenance</span>
         </div>
         <div className="flex flex-wrap items-center justify-center text-sm gap-x-2">
-          <span className="block w-3 h-3 bg-blue-500 rounded-full"></span> <span className="font-medium text-[10px] capitalize font-Oswald dark:text-slate-300">coming soon</span>
+          <span className="block w-3 h-3 bg-blue-500 rounded-full"></span> <span className="font-medium text-[10px] text-black capitalize font-Oswald dark:text-slate-300">coming soon</span>
         </div>
       </div>
       <div className="flex flex-wrap items-center justify-center w-full gap-5 gap-y-6 dark:text-slate-300">
