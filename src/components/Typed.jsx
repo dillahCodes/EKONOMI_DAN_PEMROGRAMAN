@@ -6,9 +6,18 @@ function TypedJs() {
 
   React.useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ["demand function (fungsi permintaan)", "supply function (fungsi penawaran)", "market equilibrium (keseimbangan pasar)"],
-      typeSpeed: 30,
-      backSpeed: 30,
+      strings: [
+        "demand function (fungsi permintaan)",
+        "supply function (fungsi penawaran)",
+        "market equilibrium (keseimbangan pasar)",
+        "Change in Demand  (perubahan fungsi permintaan)",
+        "Change in Supply  (perubahan fungsi penawaran)",
+        "Change in Supply and Demand  (perubahan fungsi penawaran)",
+        "Tax Incidence on Market Equilibrium  (Pengaruh Pajak Terhadap Keseimbangan Pasar)",
+        "Impact of Subsidy on Market Equilibrium (Pengaruh Subsidi Terhadap Keseimbangan Pasar)",
+      ],
+      typeSpeed: 20,
+      backSpeed: 20,
       loop: true,
     });
 
