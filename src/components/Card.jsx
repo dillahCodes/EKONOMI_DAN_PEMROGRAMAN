@@ -10,7 +10,7 @@ const FeatureCard = (props) => {
         <div className="flex flex-wrap items-center gap-x-3">
           <h2 className="text-sm text-black capitalize md:text-base card-title dark:text-slate-300">{title}</h2> <span className={`block w-5 h-5 ${status === "coming_soon" ? "bg-blue-500" : ""}${status === "available" ? "bg-green-500" : ""}${status === "maintenance" ? "bg-red-500" : ""} rounded-full`}></span>
         </div>
-        <ul className=" w-full mx-4 my-4  rounded h-[auto] text-black dark:text-slate-300">
+        <ul className=" w-full mx-3 my-3  rounded h-[auto] text-black dark:text-slate-300">
           {description.map((item) => {
             return (
               <li className="my-1 text-xs text-black md:text-sm dark:text-slate-300" key={item}>
