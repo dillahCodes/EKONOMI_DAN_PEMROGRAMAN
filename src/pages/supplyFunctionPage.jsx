@@ -16,6 +16,8 @@ const SupllyFunctionPage = () => {
   let P2;
   let Q1;
   let Q2;
+  let Pterbedar;
+  let Qterbesar;
   // let finalResult;
   if (allValues !== undefined) {
     P1 = allValues.price1;
@@ -23,13 +25,21 @@ const SupllyFunctionPage = () => {
     Q1 = allValues.quantity1;
     Q2 = allValues.quantity2;
   }
+
+  console.info(allValues);
+  P1 > P2 ? (Pterbedar = P1) : (Pterbedar = P2);
+  Q1 > Q2 ? (Qterbesar = Q1) : (Qterbesar = Q2);
   let finalPriceIfQ0 = Math.abs(((Q2 - Q1) * -P1 + Math.abs((P2 - P1) * -Q1)) / (P2 - P1)) / ((Q2 - Q1) / (P2 - P1));
   let finalQuantityIfP0 = ((Q2 - Q1) * -P1 + Math.abs((P2 - P1) * -Q1)) / (P2 - P1);
   const data = [
-    { Q: 0, P: finalPriceIfQ0 },
     { Q: finalQuantityIfP0, P: 0 },
-    { Q: Q1, P: P1 },
+    { Q: 0, P: finalPriceIfQ0 },
+    // { Q: Qterbesar * 2, P: Pterbedar + (Pterbedar - finalPriceIfQ0) * -3 },
+    // { Q: Qterbesar * 2, P: Pterbedar + (Pterbedar - finalPriceIfQ0) * 1 },
   ];
+
+  P1 > P2 ? data.push({ Q: Qterbesar * 2, P: Pterbedar + (Pterbedar - finalPriceIfQ0) * -3 }) : data.push({ Q: Qterbesar * 2, P: Pterbedar + (Pterbedar - finalPriceIfQ0) * 1 });
+  finalQuantityIfP0 > 0 || finalQuantityIfP0 == 0 ? data.push({ Q: 0, P: 0 }) : "";
 
   return (
     <>
@@ -41,12 +51,16 @@ const SupllyFunctionPage = () => {
           <div className="border-[2px] rounded-md border-[#4cb0af] p-2">
             {" "}
             <span className="font-bold capitalize font-Kanit">result :</span>
-            {!P1 || !P2 || !Q1 || !Q2 ? <RulesComponent inputRule={"input tidak boleh ada yang kosong"} inputRuleEng={"input cannot be empty"} priceRule={"harga ke2 tidak boleh lebih kecil dari harga ke1"} /> : <MathComponent tex={String.raw`Qs = ${((Q2 - Q1) * -P1 + Math.abs((P2 - P1) * -Q1)) / (P2 - P1)} ${(Q2 - Q1) / (P2 - P1) >= 0 ? "+" : ""} ${(Q2 - Q1) / (P2 - P1)}P  `} />}
+            {![P1, P2, Q1, Q2].every((value) => value !== undefined && !isNaN(value)) ? (
+              <RulesComponent inputRule={"input tidak boleh ada yang kosong"} inputRuleEng={"input cannot be empty"} priceRule={"harga ke2 tidak boleh lebih kecil dari harga ke1"} />
+            ) : (
+              <MathComponent tex={String.raw`Qs = ${((Q2 - Q1) * -P1 + Math.abs((P2 - P1) * -Q1)) / (P2 - P1)} ${(Q2 - Q1) / (P2 - P1) >= 0 ? "+" : ""} ${(Q2 - Q1) / (P2 - P1)}P  `} />
+            )}
           </div>
           <div className="border-[2px] rounded-md border-[#4cb0af] p-2 overflow-x-scroll">
             {" "}
             <span className="font-bold capitalize font-Kanit">method :</span>
-            {!P1 || !P2 || !Q1 || !Q2 ? (
+            {![P1, P2, Q1, Q2].every((value) => value !== undefined && !isNaN(value)) ? (
               ""
             ) : (
               <div className="flex flex-col text-xs gap-y-2">
@@ -87,9 +101,10 @@ const SupllyFunctionPage = () => {
                     <VictoryAxis
                       label="Quantity (Q)"
                       tickFormat={(tick) => `${tick}`} // Format label sumbu X
-                      tickValues={[data[1].Q, 0]} // Hapus label pada sumbu Y
+                      tickValues={[data[0].Q, 0, Q1, Q2]} // Hapus label pada sumbu Y
                       style={{
                         axisLabel: { padding: 25 }, // Jarak antara label sumbu X dengan chart
+                        grid: { stroke: "lightgray", strokeWidth: 2, strokeOpacity: 0.4 },
                       }}
                     />
                     {/* Sumbu Y (Price) */}
@@ -97,9 +112,10 @@ const SupllyFunctionPage = () => {
                       dependentAxis
                       label="Price (P)"
                       tickFormat={(tick) => `${tick}`} // Format label sumbu Y
-                      tickValues={[data[0].P]} // Hapus label pada sumbu Y
+                      tickValues={[data[1].P, P1, P2]} // Hapus label pada sumbu Y
                       style={{
-                        axisLabel: { padding: 25 }, // Jarak antara label sumbu Y dengan chart
+                        axisLabel: { padding: 70 }, // Jarak antara label sumbu Y dengan chart
+                        grid: { stroke: "lightgray", strokeWidth: 2, strokeOpacity: 0.4 },
                       }}
                     />
                     {/* Kurva Fungsi Penawaran */}

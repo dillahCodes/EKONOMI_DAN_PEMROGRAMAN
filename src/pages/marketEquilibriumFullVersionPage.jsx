@@ -52,8 +52,8 @@ const MarketEquilibriumFullVersion = () => {
   return (
     <>
       <Navbar />
-      <div className="flex items-center flex-col gap-y-5 justify-center w-full   p-5 pt-10 mt-16 bg-[#F5F5F5] text-black dark:text-slate-300 dark:bg-slate-800 transition-all  ease-out duration-700">
-        <h1 className="text-xl text-black sm:text-2xl md:text-3xl font-Oswald dark:text-slate-300">Market Equilibrium (Keseimbangan Pasar) 2.0</h1>
+      <div className="flex items-center   flex-col gap-y-5 justify-center w-full   p-5 pt-10 mt-16 bg-[#F5F5F5] text-black dark:text-slate-300 dark:bg-slate-800 transition-all  ease-out duration-700">
+        <h1 className="text-xl text-black sm:text-2xl md:text-3xl font-Oswald dark:text-slate-300">Market Equilibrium (Keseimbangan Pasar) v2.0</h1>
         <div className="w-full p-5 gap-y-5 flex flex-col md:w-[80%] lg:w-[70%] rounded-lg bg-[#ebebeb]  dark:bg-gray-700 shadow-md dark:shadow-black">
           <TableMarketComponent tableFor={"quantity demand (jumlah permintaan (Qd) )"} allValues={getAllValuesFromTableHandler} />
           <div className="border-[2px] rounded-md border-[#4cb0af] p-2">
@@ -110,7 +110,7 @@ const MarketEquilibriumFullVersion = () => {
                   {/* Sumbu X (Quantity) */}
                   <VictoryAxis
                     label="Quantity (Q)"
-                    tickValues={[resultP0Demand]} // Hapus label pada sumbu X
+                    tickValues={[0, [Qd1], [Qd2], resultP0Demand]} // Hapus label pada sumbu X
                     style={{
                       axisLabel: { padding: 20 }, // Jarak antara label sumbu X dengan chart
                       grid: { stroke: "lightgray", strokeWidth: 2, strokeOpacity: 0.4 },
@@ -120,7 +120,7 @@ const MarketEquilibriumFullVersion = () => {
                   <VictoryAxis
                     dependentAxis
                     label="Price (P)"
-                    tickValues={[resultQ0Demand]} // Hapus label pada sumbu Y
+                    tickValues={[[Price1], [Price2], resultQ0Demand]} // Hapus label pada sumbu Y
                     style={{
                       axisLabel: { padding: 20 }, // Jarak antara label sumbu Y dengan chart
                       grid: { stroke: "lightgray", strokeWidth: 2, strokeOpacity: 0.4 },
@@ -287,8 +287,8 @@ const MarketEquilibriumFullVersion = () => {
                   />
                   {/* Label Keseimbangan Pasar */}
                   <VictoryLabel text={`Equilibrium\nPrice: $${equilibriumPrice}\nQuantity: ${equilibriumQuantity}`} x={110} y={100} textAnchor="middle" style={{ fontSize: 12 }} />
-                  <VictoryLabel text={`Qs = ${((Qs2 - Qs1) * -Price1 + Math.abs((Price2 - Price1) * -Qs1)) / (Price2 - Price1)} ${(Qs2 - Qs1) / (Price2 - Price1) >= 0 ? "+" : ""} ${(Qs2 - Qs1) / (Price2 - Price1)}P`} x={490} y={150} textAnchor="middle" style={{ fontSize: 12, fill: "green" }} />
-                  <VictoryLabel text={`Qd = ${((Qd2 - Qd1) * -Price1 + Math.abs((Price2 - Price1) * -Qd1)) / (Price2 - Price1)} ${(Qd2 - Qd1) / (Price2 - Price1) >= 0 ? "+" : ""} ${(Qd2 - Qd1) / (Price2 - Price1)}P`} x={490} y={165} textAnchor="middle" style={{ fontSize: 12, fill: "red" }} />
+                  <VictoryLabel text={`Qs = ${((Qs2 - Qs1) * -Price1 + Math.abs((Price2 - Price1) * -Qs1)) / (Price2 - Price1)} ${(Qs2 - Qs1) / (Price2 - Price1) >= 0 ? "+" : ""} ${(Qs2 - Qs1) / (Price2 - Price1)}P`} x={490} y={90} textAnchor="middle" style={{ fontSize: 12, fill: "green" }} />
+                  <VictoryLabel text={`Qd = ${((Qd2 - Qd1) * -Price1 + Math.abs((Price2 - Price1) * -Qd1)) / (Price2 - Price1)} ${(Qd2 - Qd1) / (Price2 - Price1) >= 0 ? "+" : ""} ${(Qd2 - Qd1) / (Price2 - Price1)}P`} x={490} y={105} textAnchor="middle" style={{ fontSize: 12, fill: "red" }} />
                 </VictoryChart>
               </div>
             </div>

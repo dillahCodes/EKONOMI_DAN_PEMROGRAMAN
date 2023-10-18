@@ -59,8 +59,8 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Home", to: "home", URL: "/home" },
-    { name: "Features", to: "features" },
-    { name: "another Features", to: "another-features" },
+    { name: "Features", to: "features", URL: "/home" },
+    { name: "another Features", to: "another-features", URL: "/another-features" },
   ];
 
   return (

@@ -62,20 +62,20 @@ const TableMarketComponent = (props) => {
             <th>1</th>
             <td>
               {/* price 1 */}
-              <div className="w-[90px]">
+              <div className="w-[150px]">
                 <InputValue onChange={Price1ValueHandler} placeholder={"price 1"} />
               </div>
             </td>
             {/* quantity Qd */}
             <td>
               {" "}
-              <div className="w-[90px]">
+              <div className="w-[150px]">
                 <InputValue onChange={QdQuantity1ValueHandler} placeholder={"Qd1"} />
               </div>
             </td>
             <td>
               {" "}
-              <div className="w-[90px]">
+              <div className="w-[150px]">
                 <InputValue onChange={QsQuantity1ValueHandler} placeholder={"Qs1"} />
               </div>
             </td>
@@ -86,18 +86,18 @@ const TableMarketComponent = (props) => {
             {/* price 2 */}
             <td>
               {" "}
-              <div className="w-[90px]">
+              <div className="w-[150px]">
                 <InputValue onChange={Price2ValueHandler} placeholder={"price 2"} />
               </div>
             </td>
             {/* quantity 2 */}
             <td>
-              <div className="w-[90px]">
+              <div className="w-[150px]">
                 <InputValue onChange={QdQuantity2ValueHandler} placeholder={"Qd2"} />
               </div>
             </td>
             <td>
-              <div className="w-[90px]">
+              <div className="w-[150px]">
                 <InputValue onChange={QsQuantity2ValueHandler} placeholder={"Qs2"} />
               </div>
             </td>

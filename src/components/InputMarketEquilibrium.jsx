@@ -37,9 +37,9 @@ const InputMarketEquilibrium = ({ className, exportAllValue }) => {
         <div className="flex items-center gap-x-2 ">
           <MathComponent tex={String.raw`Qs = `} />
           <div className="w-[70px]">
-            <InputValue placeholder={"-a"} onChange={QsAonChangeHandler} />
+            <InputValue placeholder={"a"} onChange={QsAonChangeHandler} />
           </div>
-          <MathComponent tex={String.raw`+`} />
+          {/* <MathComponent tex={String.raw`+`} /> */}
           <div className="w-[70px]">
             <InputValue placeholder={"b"} onChange={QsBonChangeHandler} />
           </div>
@@ -53,7 +53,7 @@ const InputMarketEquilibrium = ({ className, exportAllValue }) => {
           <div className="w-[70px]">
             <InputValue placeholder={"a"} onChange={QdAonChangeHandler} />
           </div>
-          <MathComponent tex={String.raw`-`} />
+          {/* <MathComponent tex={String.raw`-`} /> */}
           <div className="w-[70px]">
             <InputValue placeholder={"b"} onChange={QdBonChangeHandler} />
           </div>
