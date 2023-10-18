@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const ComingSoonPage = () => {
   return (
     <>
-      <div className="flex flex-col items-center justify-center min-h-screen p-5 bg-gray-100">
+      <div className="flex flex-col items-center justify-center min-h-screen p-5 text-black bg-gray-100">
         <div className="flex flex-col items-center justify-center">
           <img src="/profile.jpg" alt="Logo" className="object-cover w-40 h-40 mb-8 rounded-full" />
           <h1 className="mb-4 text-4xl font-bold text-center">Coming Soon</h1>
