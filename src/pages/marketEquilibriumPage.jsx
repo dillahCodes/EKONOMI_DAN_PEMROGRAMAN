@@ -60,9 +60,9 @@ const MarketEquilibriumPage = () => {
             ) : (
               <>
                 {" "}
-                {/* <MathComponent tex={String.raw` P = ${(Qd_A + Math.abs(Qs_A)) / (Math.abs(Qd_B) + Qs_B)}`} />
-                <MathComponent tex={String.raw`Qs = ${Qs_A + Qs_B * Final_P}`} />
-                <MathComponent tex={String.raw`Qd = ${Qd_A + Qd_B * Final_P}`} /> */}
+                <MathComponent tex={String.raw` P =  ${(Qd_A + Math.abs(Qs_A)) / (Math.abs(Qd_B) + Qs_B)}`} />
+                <MathComponent tex={String.raw`Qd = ${Qd_A + Qd_B * FinalResultP}`} />
+                <MathComponent tex={String.raw`Qd = ${Qs_A + Qs_B * FinalResultP}`} />
               </>
             )}
           </div>
@@ -271,7 +271,7 @@ const MarketEquilibriumPage = () => {
                         }}
                       />
                       {/* Label Keseimbangan Pasar */}
-                      {/* <VictoryLabel text={`Equilibrium\nPrice: $${equilibriumPrice}\nQuantity: ${equilibriumQuantity}`} x={110} y={100} textAnchor="middle" style={{ fontSize: 12 }} /> */}
+                      <VictoryLabel text={`Equilibrium\nPrice: $${(Qd_A + Math.abs(Qs_A)) / (Math.abs(Qd_B) + Qs_B)}\nQuantity: ${Qs_A + Qs_B * FinalResultP}`} x={110} y={100} textAnchor="middle" style={{ fontSize: 12 }} />
                       {/* <VictoryLabel text={`Qs = ${((Qs2 - Qs1) * -Price1 + Math.abs((Price2 - Price1) * -Qs1)) / (Price2 - Price1)} ${(Qs2 - Qs1) / (Price2 - Price1) >= 0 ? "+" : ""} ${(Qs2 - Qs1) / (Price2 - Price1)}P`} x={490} y={90} textAnchor="middle" style={{ fontSize: 12, fill: "green" }} /> */}
                       {/* <VictoryLabel text={`Qd = ${((Qd2 - Qd1) * -Price1 + Math.abs((Price2 - Price1) * -Qd1)) / (Price2 - Price1)} ${(Qd2 - Qd1) / (Price2 - Price1) >= 0 ? "+" : ""} ${(Qd2 - Qd1) / (Price2 - Price1)}P`} x={490} y={105} textAnchor="middle" style={{ fontSize: 12, fill: "red" }} /> */}
                     </VictoryChart>
