@@ -46,7 +46,7 @@ const MarketEquilibriumPage = () => {
   let FinalResultQ = Qs_A + Qs_B * FinalResultP;
 
   return (
-    <div className="flex flex-col items-center justify-between w-full min-h-screen gap-y-5">
+    <div className="flex flex-col items-center justify-between w-full min-h-screen">
       <Navbar />
       <div className=" w-full flex flex-col items-center  p-5 pt-10 mt-16 bg-[#F5F5F5] text-black dark:text-slate-300 dark:bg-slate-800 transition-all  ease-out duration-700">
         <h1 className="my-10 text-xl text-black dark:text-slate-300 sm:text-2xl md:text-3xl font-Oswald">Market Equilibrium (Keseimbangan Pasar) v1.0</h1>
