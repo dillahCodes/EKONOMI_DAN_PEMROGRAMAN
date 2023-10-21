@@ -9,6 +9,7 @@ import SupllyFunctionPage from "./pages/supplyFunctionPage.jsx";
 import MarketEquilibriumPage from "./pages/marketEquilibriumPage.jsx";
 import MarketEquilibriumFullVersion from "./pages/marketEquilibriumFullVersionPage.jsx";
 import ComingSoonPage from "./pages/comingSoon.jsx";
+import ChangeInDemand from "./pages/changeInDemandPage.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <ErrorPage />, errorElement: <ErrorPage /> },
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
   { path: "/supplyFunction", element: <SupllyFunctionPage /> },
   { path: "/marketEquilibrium", element: <MarketEquilibriumPage /> },
   { path: "/marketEquilibriumFullVersion", element: <MarketEquilibriumFullVersion /> },
+  { path: "/ChangeInDemand", element: <ChangeInDemand /> },
   { path: "/comingSoon", element: <ComingSoonPage /> },
 ]);
 
