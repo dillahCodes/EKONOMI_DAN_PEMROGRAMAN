@@ -1,4 +1,4 @@
-import FeatureCard from "../Card";
+import FeatureCard from "../Card/Card";
 
 const FeaturesSection = () => {
   const featuresData = [

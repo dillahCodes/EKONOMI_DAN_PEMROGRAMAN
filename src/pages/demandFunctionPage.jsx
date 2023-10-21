@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar";
-import TableComponent from "../components/Table";
+import Navbar from "../components/Navbar/Navbar";
+import TableComponent from "../components/Table/Table";
 import { MathComponent } from "mathjax-react";
 import { VictoryChart, VictoryLine, VictoryAxis, VictoryLabel } from "victory";
-import RulesComponent from "../components/Rules";
-import { Footer } from "../components/Footer";
+import RulesComponent from "../components/Rules/Rules";
+import { Footer } from "../components/Footer/Footer";
 
 const DemandFunctionPage = () => {
   const [allValues, setAllValues] = useState();

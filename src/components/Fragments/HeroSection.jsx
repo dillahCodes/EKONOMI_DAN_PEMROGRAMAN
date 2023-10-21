@@ -1,4 +1,4 @@
-import TypedJs from "../Typed";
+import TypedJs from "../Typed/Typed";
 
 const HeroSection = () => {
   const scrollToElement = (elementId, offset) => {

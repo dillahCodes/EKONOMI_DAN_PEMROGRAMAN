@@ -1,10 +1,10 @@
 import { useState } from "react";
-import TableMarketComponent from "../components/TableMarket";
-import Navbar from "../components/Navbar";
+import TableMarketComponent from "../components/Table/TableMarket";
+import Navbar from "../components/Navbar/Navbar";
 import { MathComponent } from "mathjax-react";
 import { VictoryAxis, VictoryChart, VictoryLabel, VictoryLine } from "victory";
-import RulesComponent from "../components/Rules";
-import { Footer } from "../components/Footer";
+import RulesComponent from "../components/Rules/Rules";
+import { Footer } from "../components/Footer/Footer";
 
 const MarketEquilibriumFullVersion = () => {
   const [allValues, setAllValues] = useState();

@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar";
-import TableComponent from "../components/Table";
-import RulesComponent from "../components/Rules";
+import Navbar from "../components/Navbar/Navbar";
+import TableComponent from "../components/Table/Table";
+import RulesComponent from "../components/Rules/Rules";
 import { MathComponent } from "mathjax-react";
 import { VictoryChart, VictoryLine, VictoryAxis } from "victory";
-import { Footer } from "../components/Footer";
+import { Footer } from "../components/Footer/Footer";
 
 const SupllyFunctionPage = () => {
   const [allValues, setAllValues] = useState();

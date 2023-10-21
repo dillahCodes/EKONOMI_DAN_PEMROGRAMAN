@@ -1,7 +1,7 @@
-import { Footer } from "./components/Footer";
+import { Footer } from "./components/Footer/Footer";
 import FeaturesSection from "./components/Fragments/FeaturesSection";
 import HeroSection from "./components/Fragments/HeroSection";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
