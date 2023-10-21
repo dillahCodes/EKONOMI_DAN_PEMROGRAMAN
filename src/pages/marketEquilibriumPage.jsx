@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
+import RulesComponent from "../components/Rules/Rules";
 import { MathComponent } from "mathjax-react";
+import { Footer } from "../components/Footer/Footer";
 import { VictoryAxis, VictoryChart, VictoryLabel, VictoryLine } from "victory";
 import InputMarketEquilibrium from "../components/Table/TableMarketEquilibrium";
-import RulesComponent from "../components/Rules/Rules";
-import { Footer } from "../components/Footer/Footer";
 
 const MarketEquilibriumPage = () => {
   const [valuesFromInput, setValuesFromInput] = useState();
@@ -46,11 +46,11 @@ const MarketEquilibriumPage = () => {
   let FinalResultQ = Qs_A + Qs_B * FinalResultP;
 
   return (
-    <div className="flex flex-col items-center justify-between w-full min-h-screen">
+    <>
       <Navbar />
-      <div className=" w-full flex flex-col items-center  p-5 pt-10 mt-16 bg-[#F5F5F5] text-black dark:text-slate-300 dark:bg-slate-800 transition-all  ease-out duration-700">
-        <h1 className="my-10 text-xl text-black dark:text-slate-300 sm:text-2xl md:text-3xl font-Oswald">Market Equilibrium (Keseimbangan Pasar) v1.0</h1>
-        <div className="w-full min-h-full  p-5 gap-y-5  flex flex-col md:w-[80%] overflow-x-scroll lg:w-[70%] rounded-lg bg-[#ebebeb]  dark:bg-gray-700 shadow-md dark:shadow-black">
+      <div className="flex items-center flex-col gap-y-5 justify-center w-full   pt-10 mt-16 bg-[#F5F5F5] text-black dark:text-slate-300 dark:bg-slate-800 transition-all  ease-out duration-700">
+        <h1 className="text-xl text-black dark:text-slate-300 sm:text-2xl md:text-3xl font-Oswald">Market Equilibrium (Keseimbangan Pasar) v1.0</h1>
+        <div className="w-full  p-5 gap-y-5 pb-20 flex flex-col md:w-[80%] overflow-x-scroll lg:w-[70%] rounded-lg bg-[#ebebeb]  dark:bg-gray-700 shadow-md dark:shadow-black">
           <InputMarketEquilibrium exportAllValue={reciveAllValuesFromInputHandler} />
           <div className="border-[2px] rounded-md border-[#4cb0af] p-2">
             {" "}
@@ -281,9 +281,9 @@ const MarketEquilibriumPage = () => {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </>
   );
 };
 
