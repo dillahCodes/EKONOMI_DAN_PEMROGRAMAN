@@ -64,7 +64,7 @@ const ChangeInDemand = () => {
   return (
     <>
       <div className="flex items-center flex-col gap-y-5 min-h-screen   justify-between w-full  text-black dark:text-slate-300    bg-[#F5F5F5] dark:bg-slate-800 transition-all  ease-out duration-700">
-        <h1 className="text-xl text-black mt-28 dark:text-slate-300 sm:text-2xl md:text-3xl font-Oswald">Change in Demand (perubahan fungsi permintaan)</h1>
+        <h1 className="px-3 text-xl text-center text-black mt-28 dark:text-slate-300 sm:text-2xl md:text-3xl font-Oswald">Change in Demand (perubahan fungsi permintaan)</h1>
         <div className="w-full p-5  gap-y-5 flex flex-col md:w-[80%] lg:w-[70%] rounded-lg bg-[#ebebeb]  dark:bg-gray-700 shadow-md dark:shadow-black">
           <ChangeInDemandTable tableFor={"quantity suplly (jumlah penawaran (Qs) )"} getAllValue={GET_VALUE_FROM_INPUT_FUNCTION_HANDLER} />
           <div className="border-[2px] rounded-md border-[#4cb0af] p-2">
