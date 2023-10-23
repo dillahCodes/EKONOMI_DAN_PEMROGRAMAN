@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar/Navbar";
 import RulesComponent from "../components/Rules/Rules";
 import { MathComponent } from "mathjax-react";
 import { Footer } from "../components/Footer/Footer";
@@ -47,10 +46,9 @@ const MarketEquilibriumPage = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="flex items-center flex-col gap-y-5 justify-center w-full   pt-10 mt-16 bg-[#F5F5F5] text-black dark:text-slate-300 dark:bg-slate-800 transition-all  ease-out duration-700">
-        <h1 className="text-xl text-black dark:text-slate-300 sm:text-2xl md:text-3xl font-Oswald">Market Equilibrium (Keseimbangan Pasar) v1.0</h1>
-        <div className="w-full  p-5 gap-y-5 pb-20 flex flex-col md:w-[80%] overflow-x-scroll lg:w-[70%] rounded-lg bg-[#ebebeb]  dark:bg-gray-700 shadow-md dark:shadow-black">
+      <div className="flex items-center flex-col gap-y-5   justify-around w-full  text-black dark:text-slate-300    bg-[#F5F5F5] dark:bg-slate-800 transition-all  ease-out duration-700">
+        <h1 className="mt-32 text-xl text-black sm:text-2xl md:text-3xl font-Oswald dark:text-slate-300">Market Equilibrium (Keseimbangan Pasar) v1.0</h1>
+        <div className="w-full   p-5 gap-y-5 pb-20 flex flex-col md:w-[80%] overflow-x-scroll lg:w-[70%] rounded-lg bg-[#ebebeb]  dark:bg-gray-700 shadow-md dark:shadow-black">
           <InputMarketEquilibrium exportAllValue={reciveAllValuesFromInputHandler} />
           <div className="border-[2px] rounded-md border-[#4cb0af] p-2">
             {" "}
