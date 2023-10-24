@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./pages/home";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Home from "./pages/home";
 import DemandFunctionPage from "./pages/demandFunctionPage.jsx";
 import ErrorPage from "./pages/errorPages.jsx";
 import SupllyFunctionPage from "./pages/supplyFunctionPage.jsx";
@@ -8,73 +8,101 @@ import MarketEquilibriumPage from "./pages/marketEquilibriumPage.jsx";
 import MarketEquilibriumFullVersion from "./pages/marketEquilibriumFullVersionPage.jsx";
 import ComingSoonPage from "./pages/comingSoon.jsx";
 import ChangeInDemand from "./pages/changeInDemandPage.jsx";
+import PropTypes from "prop-types";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+
+// fungsi untuk memuat halaman dari atas
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
+// Komponen untuk menampilkan navbar di setiap rute
+function Layout({ children }) {
+  return (
+    <>
+      <Navbar />
+      <ScrollToTop />
+      {children}
+    </>
+  );
+}
+Layout.propTypes = {
+  children: PropTypes.node,
+};
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <>
-        <Navbar />
+      <Layout>
         <Home />
-      </>
+      </Layout>
     ),
     errorElement: <ErrorPage />,
   },
   {
     path: "/home",
     element: (
-      <>
-        <Navbar />
+      <Layout>
         <Home />
-      </>
+      </Layout>
     ),
   },
   {
     path: "/demandFunction",
     element: (
-      <>
-        <Navbar />
+      <Layout>
         <DemandFunctionPage />
-      </>
+      </Layout>
     ),
   },
   {
     path: "/supplyFunction",
     element: (
-      <>
-        <Navbar />
+      <Layout>
         <SupllyFunctionPage />
-      </>
+      </Layout>
     ),
   },
   {
     path: "/marketEquilibrium",
     element: (
-      <>
-        <Navbar />
+      <Layout>
         <MarketEquilibriumPage />
-      </>
+      </Layout>
     ),
   },
   {
     path: "/marketEquilibriumFullVersion",
     element: (
-      <>
-        <Navbar />
+      <Layout>
         <MarketEquilibriumFullVersion />
-      </>
+      </Layout>
     ),
   },
   {
     path: "/ChangeInDemand",
     element: (
-      <>
-        <Navbar />
+      <Layout>
         <ChangeInDemand />
-      </>
+      </Layout>
     ),
   },
-  { path: "/comingSoon", element: <ComingSoonPage /> },
+  {
+    path: "/comingSoon",
+    element: (
+      <Layout>
+        <ComingSoonPage />
+      </Layout>
+    ),
+  },
 ]);
 
 function App() {

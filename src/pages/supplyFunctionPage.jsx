@@ -25,7 +25,6 @@ const SupllyFunctionPage = () => {
     Q2 = allValues.quantity2;
   }
 
-  console.info(allValues);
   P1 > P2 ? (Pterbedar = P1) : (Pterbedar = P2);
   Q1 > Q2 ? (Qterbesar = Q1) : (Qterbesar = Q2);
   let finalPriceIfQ0 = Math.abs(((Q2 - Q1) * -P1 + Math.abs((P2 - P1) * -Q1)) / (P2 - P1)) / ((Q2 - Q1) / (P2 - P1));
@@ -43,8 +42,8 @@ const SupllyFunctionPage = () => {
   return (
     <>
       <div className="flex items-center flex-col gap-y-5   justify-around w-full  text-black dark:text-slate-300    bg-[#F5F5F5] dark:bg-slate-800 transition-all  ease-out duration-700">
-        <h1 className="text-xl text-black mt-28 dark:text-slate-300 sm:text-2xl md:text-3xl font-Oswald">suplly function (fungsi penawaran)</h1>
-        <div className="w-full p-5 gap-y-5 flex flex-col md:w-[80%] lg:w-[70%] rounded-lg bg-[#ebebeb]  dark:bg-gray-700 shadow-md dark:shadow-black">
+        <h1 className="px-3 text-xl text-center text-black mt-28 dark:text-slate-300 sm:text-2xl md:text-3xl font-Oswald">suplly function (fungsi penawaran)</h1>
+        <div className="w-full mb-10 p-5 gap-y-5 flex flex-col md:w-[80%] lg:w-[70%] rounded-lg bg-[#ebebeb]  dark:bg-gray-700 shadow-md dark:shadow-black ">
           <TableComponent tableFor={"quantity suplly (jumlah penawaran (Qs) )"} allValues={getAllValuesFromTableHandler} />
           <div className="border-[2px] rounded-md border-[#4cb0af] p-2">
             {" "}
