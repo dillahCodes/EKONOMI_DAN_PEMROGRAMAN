@@ -90,7 +90,7 @@ const ChangeInDemand = () => {
                   <span className="text-blue-500">
                     <MathComponent tex={String.raw`Qd2 = ${QD_A_NEW} ${QD_B_NEW > 0 ? "+" : ""} ${QD_B_NEW}P  `} />
                   </span>
-                  <MathComponent tex={String.raw`P =${EQ_PRICE_OLD}  `} />
+                  <MathComponent tex={String.raw`P =${EQ_PRICE_NEW}  `} />
                   <MathComponent tex={String.raw`Qd =${EQ_QD_NEW}  `} />
                   <MathComponent tex={String.raw`Qs =${EQ_QS_NEW}  `} />
                 </div>
