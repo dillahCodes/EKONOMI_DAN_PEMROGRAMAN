@@ -65,7 +65,7 @@ const ChangeInSupply = () => {
               <div className={`${variablesToCheck.every((variable) => variable !== undefined) ? "" : "hidden"}`}>
                 <div className="border-[2px] text-base  rounded-md border-[#4cb0af] p-2 mt-2">
                   <span className="font-bold capitalize font-Kanit"> Market Equilibrium (OLD)</span>{" "}
-                  <span className="text-red-500">
+                  <span className="text-yellow-500">
                     <MathComponent tex={String.raw`Qs1 = ${QS_A_OLD} ${QS_B_OLD > 0 ? "+" : ""} ${QS_B_OLD}P`} />
                   </span>
                   <MathComponent tex={String.raw`P =${EQ_PRICE_OLD}  `} />
@@ -74,7 +74,7 @@ const ChangeInSupply = () => {
                 </div>
                 <div className="border-[2px] text-base  rounded-md border-[#4cb0af] p-2 mt-3">
                   <span className="font-bold capitalize font-Kanit"> Market Equilibrium (NEW)</span>{" "}
-                  <span className="text-blue-500">
+                  <span className="text-green-500">
                     <MathComponent tex={String.raw`Qs2 = ${QS_A_NEW} ${QS_B_NEW > 0 ? "+" : ""} ${QS_B_NEW}P  `} />
                   </span>
                   <MathComponent tex={String.raw`P =${EQ_PRICE_NEW}  `} />
