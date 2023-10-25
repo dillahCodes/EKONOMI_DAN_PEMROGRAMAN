@@ -12,6 +12,7 @@ import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import ChangeInSupply from "./pages/changeInSupplyPage";
+import ChangeInDemandAndSupply from "./pages/changeInDemandAndSupplyPage";
 
 // fungsi untuk memuat halaman dari atas
 function ScrollToTop() {
@@ -101,6 +102,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <ChangeInSupply />
+      </Layout>
+    ),
+  },
+  {
+    path: "/ChangeInDemandAndSupply",
+    element: (
+      <Layout>
+        <ChangeInDemandAndSupply />
       </Layout>
     ),
   },
