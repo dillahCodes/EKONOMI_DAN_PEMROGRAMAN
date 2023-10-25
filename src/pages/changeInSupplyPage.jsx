@@ -7,7 +7,6 @@ import RulesComponent from "../components/Rules/Rules";
 
 const ChangeInSupply = () => {
   const [ALL_VALUE_FROM_INPUT, SET_ALL_VALUE_FROM_INPUT] = useState();
-  console.info(ALL_VALUE_FROM_INPUT);
 
   // MAIN VARIABLES HERE
   let QD_A, QD_B, QS_A_NEW, QS_B_NEW, QS_A_OLD, QS_B_OLD;
@@ -53,9 +52,6 @@ const ChangeInSupply = () => {
     { Q: EQ_QD_NEW * 2, P: QS_NEW_P_IF_Q0 + (EQ_PRICE_NEW - QS_NEW_P_IF_Q0) * 2 },
   ];
 
-  console.info(data1);
-  console.info(data2);
-  console.info(data3);
   return (
     <>
       <div className="flex items-center  pt-24   flex-col gap-y-5 min-h-screen   justify-between w-full  text-black dark:text-slate-300    bg-[#F5F5F5] dark:bg-slate-800 transition-all  ease-out duration-700">
