@@ -196,20 +196,20 @@ const ChangeInDemandAndSupply = () => {
                     }}
                   />
                   <VictoryLabel
-                    text={`Qd = ${QD_A_OLD} ${QD_B_OLD > 0 ? "+" : ""} ${QD_B_OLD}`} // Teks yang ingin ditampilkan
+                    text={`Qd(old) = ${QD_A_OLD} ${QD_B_OLD > 0 ? "+" : ""} ${QD_B_OLD}`} // Teks yang ingin ditampilkan
                     x={120} // Koordinat x label
                     y={70} // Koordinat y label
                     textAnchor="middle" // Pusatkan teks
                     angle={0} // Putar teks sesuai kebutuhan
-                    style={{ fill: "red" }} // Mengatur warna teks menjadi merah
+                    style={{ fill: "red", fontSize: 12 }} // Mengatur warna teks menjadi merah
                   />
                   <VictoryLabel
-                    text={`Qd1 = ${QS_A_OLD} ${QS_B_OLD > 0 ? "+" : ""} ${QS_B_OLD}`} // Teks yang ingin ditampilkan
-                    x={120} // Koordinat x label
+                    text={`Qs(old) = ${QS_A_OLD} ${QS_B_OLD > 0 ? "+" : ""} ${QS_B_OLD}`} // Teks yang ingin ditampilkan
+                    x={125} // Koordinat x label
                     y={90} // Koordinat y label
                     textAnchor="middle" // Pusatkan teks
                     angle={0} // Putar teks sesuai kebutuhan
-                    style={{ fill: "yellow" }} // Mengatur warna teks menjadi merah
+                    style={{ fill: "yellow", fontSize: 12 }} // Mengatur warna teks menjadi merah
                   />
                 </VictoryChart>
               </div>
@@ -269,22 +269,21 @@ const ChangeInDemandAndSupply = () => {
                   />
 
                   {/* Kurva Fungsi Permintaan (NEW)*/}
-                  <VictoryLine
-                    data={QD_NEW_DATA}
-                    x="Q" // Menggunakan Quantity sebagai sumbu X
-                    y="P" // Menggunakan Price sebagai sumbu Y
-                    style={{
-                      data: { stroke: "purple" }, // Warna garis kurva
-                    }}
+                  <VictoryLabel
+                    text={`Qd = ${QD_A_NEW} ${QD_B_NEW > 0 ? "+" : ""} ${QD_B_NEW}`} // Teks yang ingin ditampilkan
+                    x={120} // Koordinat x label
+                    y={70} // Koordinat y label
+                    textAnchor="middle" // Pusatkan teks
+                    angle={0} // Putar teks sesuai kebutuhan
+                    style={{ fill: "purple" }} // Mengatur warna teks menjadi merah
                   />
-                  {/* Kurva Fungsi penawaran (NEW)*/}
-                  <VictoryLine
-                    data={QS_NEW_DATA}
-                    x="Q" // Menggunakan Quantity sebagai sumbu X
-                    y="P" // Menggunakan Price sebagai sumbu Y
-                    style={{
-                      data: { stroke: "green" }, // Warna garis kurva
-                    }}
+                  <VictoryLabel
+                    text={`Qd1 = ${QS_A_NEW} ${QS_B_NEW > 0 ? "+" : ""} ${QS_B_NEW}`} // Teks yang ingin ditampilkan
+                    x={120} // Koordinat x label
+                    y={90} // Koordinat y label
+                    textAnchor="middle" // Pusatkan teks
+                    angle={0} // Putar teks sesuai kebutuhan
+                    style={{ fill: "green" }} // Mengatur warna teks menjadi merah
                   />
                   <VictoryLabel
                     text={`Qd = ${QD_A_NEW} ${QD_B_NEW > 0 ? "+" : ""} ${QD_B_NEW}`} // Teks yang ingin ditampilkan
