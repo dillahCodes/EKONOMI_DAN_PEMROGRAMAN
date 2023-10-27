@@ -22,7 +22,7 @@ const PriceElasticityOfDemand = () => {
 
   return (
     <div className="flex items-center  pt-24   flex-col gap-y-5 min-h-screen   justify-between w-full  text-black dark:text-slate-300    bg-[#F5F5F5] dark:bg-slate-800 transition-all  ease-out duration-700">
-      <h1 className="px-3 my-5 text-xl text-center text-black dark:text-slate-300 sm:text-2xl md:text-3xl font-Oswald">Elastisitas Harga (Price Elasticity Of Demand)</h1>
+      <h1 className="px-3 my-5 text-xl text-center text-black dark:text-slate-300 sm:text-2xl md:text-3xl font-Oswald">Elastisitas Harga permintaan (Price Elasticity Of Demand)</h1>
       <div className="w-full  p-5 gap-y-5 flex mb-10 flex-col md:w-[80%] lg:w-[70%] rounded-lg bg-[#ebebeb] dark:bg-gray-700 shadow-md dark:shadow-black">
         {/* Isi komponen di sini */}
         <TablePriceElasticityOfDemand getAllValue={SET_ALL_VALUE} />
