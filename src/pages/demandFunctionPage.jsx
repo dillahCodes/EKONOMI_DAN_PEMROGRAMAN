@@ -25,7 +25,6 @@ const DemandFunctionPage = () => {
   let finalPriceIfQ0 = `${((Q2 - Q1) * -P1 + Math.abs((P2 - P1) * -Q1)) / (P2 - P1) / Math.abs((Q2 - Q1) / (P2 - P1))} `;
   let finalQuantityIfP0 = `${((Q2 - Q1) * -P1 + Math.abs((P2 - P1) * -Q1)) / (P2 - P1)}`;
   let finalResult1 = `Qd = ${((Q2 - Q1) * -P1 + Math.abs((P2 - P1) * -Q1)) / (P2 - P1)} ${(Q2 - Q1) / (P2 - P1) >= 0 ? "+" : ""} ${(Q2 - Q1) / (P2 - P1)}P`;
-  console.info(finalPriceIfQ0, finalQuantityIfP0);
 
   const data1 = [
     { Q: 0, P: Math.abs(finalPriceIfQ0) },

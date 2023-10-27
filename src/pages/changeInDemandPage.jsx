@@ -99,24 +99,6 @@ const ChangeInDemand = () => {
             ) : (
               <RulesComponent inputRule={"input tidak boleh ada yang kosong"} inputRuleEng={"input cannot be empty"} priceRule={"harga ke2 tidak boleh lebih kecil dari harga ke1"} priceRuleEng={"The 2nd price cannot be smaller than the 1st price"} />
             )}
-            {/* <div className="p-2">
-              <span className="font-bold capitalize font-Kanit">If Quantity (Q) = 0; Price (P) = ? </span> <br />
-              <div className="text-xs">
-                <MathComponent tex={String.raw`Qd = ${QD_OLD_A} ${QD_OLD_B > 0 ? "+" : ""} ${QD_OLD_B}P`} />
-                <MathComponent tex={String.raw`0 = ${QD_OLD_A} ${QD_OLD_B > 0 ? "+" : ""} ${QD_OLD_B}P`} />
-                <MathComponent tex={String.raw`${QD_OLD_B > 0 ? -QD_OLD_B : Math.abs(QD_OLD_B)}P = ${QD_OLD_A} `} />
-                <MathComponent tex={String.raw`P = \frac {${QD_OLD_A}}{${QD_OLD_B > 0 ? -QD_OLD_B : Math.abs(QD_OLD_B)}} `} />
-                <MathComponent tex={String.raw`P =  ${QD_OLD_A / (QD_OLD_B > 0 ? -QD_OLD_B : Math.abs(QD_OLD_B))} `} />
-              </div>
-            </div>
-            <div className="p-2">
-              <span className="font-bold capitalize font-Kanit">If Price (P) = 0; Quantity (Q) = ? </span> <br />
-              <div className="text-xs">
-                <MathComponent tex={String.raw`Qd = ${QD_OLD_A} ${QD_OLD_B > 0 ? "+" : ""} ${QD_OLD_B}P`} />
-                <MathComponent tex={String.raw`Qd = ${QD_OLD_A} ${QD_OLD_B > 0 ? "+" : ""} ${QD_OLD_B}(0)`} />
-                <MathComponent tex={String.raw`Qd = ${QD_OLD_A - QD_OLD_B * 0}`} />
-              </div>
-            </div> */}
           </div>
           <div className="border-[2px] rounded-md border-[#4cb0af] p-2 overflow-x-scroll">
             {" "}
