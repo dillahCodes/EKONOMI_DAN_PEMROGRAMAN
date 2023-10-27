@@ -26,14 +26,12 @@ const ChangeInDemandAndSupply = () => {
   // MARKET Equilibrium OLD HERE
   let EQ_PRICE_OLD = (parseFloat(QD_A_OLD) + (QS_A_OLD > 0 ? -QS_A_OLD : Math.abs(QS_A_OLD))) / ((QD_B_OLD > 0 ? -QD_B_OLD : Math.abs(QD_B_OLD)) + QS_B_OLD).toFixed(1);
   let EQ_QD_OLD = parseFloat(QD_A_OLD) + QD_B_OLD * EQ_PRICE_OLD;
-  let EQ_QS_OLD = parseFloat(QS_A_OLD) + QS_B_OLD * EQ_PRICE_OLD;
-  console.info(EQ_PRICE_OLD, EQ_QD_OLD, EQ_QS_OLD);
+  // let EQ_QS_OLD = parseFloat(QS_A_OLD) + QS_B_OLD * EQ_PRICE_OLD;
 
   // MARKET Equilibrium NEW HERE
   let EQ_PRICE_NEW = (parseFloat(QD_A_NEW) + (QS_A_NEW > 0 ? -QS_A_NEW : Math.abs(QS_A_NEW))) / ((QD_B_NEW > 0 ? -QD_B_NEW : Math.abs(QD_B_NEW)) + QS_B_NEW).toFixed(1);
   let EQ_QD_NEW = parseFloat(QD_A_NEW) + QD_B_NEW * EQ_PRICE_NEW;
-  let EQ_QS_NEW = parseFloat(QS_A_NEW) + QS_B_NEW * EQ_PRICE_NEW;
-  console.info(EQ_PRICE_NEW, EQ_QD_NEW, EQ_QS_NEW);
+  // let EQ_QS_NEW = parseFloat(QS_A_NEW) + QS_B_NEW * EQ_PRICE_NEW;
 
   // QD  DATA OLD HERE
   let QD_OLD_Q_IF_P0 = QD_A_OLD - QD_B_OLD * 0;
@@ -42,7 +40,6 @@ const ChangeInDemandAndSupply = () => {
     { Q: parseFloat(QD_OLD_Q_IF_P0), P: 0 },
     { Q: 0, P: parseFloat(QD_OLD_P_IF_Q0) },
   ];
-  console.info(QD_OLD_DATA);
 
   // QD  DATA NEW HERE
   let QD_NEW_Q_IF_P0 = QD_A_NEW - QD_B_NEW * 0;
@@ -51,7 +48,6 @@ const ChangeInDemandAndSupply = () => {
     { Q: parseFloat(QD_NEW_Q_IF_P0), P: 0 },
     { Q: 0, P: parseFloat(QD_NEW_P_IF_Q0) },
   ];
-  console.info(QD_NEW_DATA);
   // Qs DATA OLD HERE
   let QS_OLD_Q_IF_P0 = QS_A_OLD - QS_B_OLD * 0;
   let QS_OLD_P_IF_Q0 = QS_A_OLD / (QS_B_OLD > 0 ? -QS_B_OLD : Math.abs(QS_B_OLD));
@@ -60,7 +56,6 @@ const ChangeInDemandAndSupply = () => {
     { Q: 0, P: QS_OLD_P_IF_Q0 },
     { Q: EQ_QD_OLD * 2, P: QS_OLD_P_IF_Q0 + (EQ_PRICE_OLD - QS_OLD_P_IF_Q0) * 2 },
   ];
-  console.info(QS_OLD_DATA);
 
   // Qs DATA NEW HERE
   let QS_NEW_Q_IF_P0 = QS_A_NEW - QS_B_NEW * 0;
@@ -70,7 +65,6 @@ const ChangeInDemandAndSupply = () => {
     { Q: 0, P: QS_NEW_P_IF_Q0 },
     { Q: EQ_QD_NEW * 2, P: QS_NEW_P_IF_Q0 + (EQ_PRICE_NEW - QS_NEW_P_IF_Q0) * 2 },
   ];
-  console.info(QS_NEW_DATA);
 
   return (
     <div className="flex items-center  pt-24   flex-col gap-y-5 min-h-screen   justify-between w-full  text-black dark:text-slate-300    bg-[#F5F5F5] dark:bg-slate-800 transition-all  ease-out duration-700">
