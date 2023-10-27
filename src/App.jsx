@@ -13,6 +13,7 @@ import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import ChangeInSupply from "./pages/changeInSupplyPage";
 import ChangeInDemandAndSupply from "./pages/changeInDemandAndSupplyPage";
+import PriceElasticityOfDemand from "./pages/priceElasticityOfDemand";
 
 // fungsi untuk memuat halaman dari atas
 function ScrollToTop() {
@@ -110,6 +111,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <ChangeInDemandAndSupply />
+      </Layout>
+    ),
+  },
+  {
+    path: "/PriceElasticityOfDemand",
+    element: (
+      <Layout>
+        <PriceElasticityOfDemand />
       </Layout>
     ),
   },

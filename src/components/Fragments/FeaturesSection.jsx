@@ -11,6 +11,7 @@ const FeaturesSection = () => {
     { title: "Change in Supply and Demand  (perubahan fungsi penawaran dan permintaan) ", description: ["calculate the Change in Supply and Demand🧮", "Market Equilibrium with Change in Supply and Demand curve📈"], Url: "/ChangeInDemandAndSupply", status: "available" },
     { title: "Tax Incidence on Market Equilibrium  (Pengaruh Pajak Terhadap Keseimbangan Pasar) ", description: ["calculate the Tax Incidence on Market Equilibrium🧮", "Market Equilibrium with Tax Incidence on Market Equilibrium curve📈"], Url: "/comingSoon", status: "coming_soon" },
     { title: "Impact of Subsidy on Market Equilibrium (Pengaruh Subsidi Terhadap Keseimbangan Pasar) ", description: ["calculate the Impact of Subsidy on Market Equilibrium🧮", "Market Equilibrium with Impact of Subsidy on Market Equilibrium curve📈"], Url: "/comingSoon", status: "coming_soon" },
+    { title: "ELASTISITAS HARGA (Price Elasticity Of Demand) ", description: ["calculate the Price Elasticity Of Demand🧮"], Url: "/PriceElasticityOfDemand", status: "coming_soon" },
   ];
 
   return (
