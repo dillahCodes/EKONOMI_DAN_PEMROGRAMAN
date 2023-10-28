@@ -14,6 +14,7 @@ import { useEffect } from "react";
 import ChangeInSupply from "./pages/changeInSupplyPage";
 import ChangeInDemandAndSupply from "./pages/changeInDemandAndSupplyPage";
 import PriceElasticityOfDemand from "./pages/priceElasticityOfDemand";
+import CrossPriceElasticity from "./pages/crossPriceElasticity";
 
 // fungsi untuk memuat halaman dari atas
 function ScrollToTop() {
@@ -119,6 +120,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <PriceElasticityOfDemand />
+      </Layout>
+    ),
+  },
+  {
+    path: "/CrossPriceElasticity",
+    element: (
+      <Layout>
+        <CrossPriceElasticity />
       </Layout>
     ),
   },
