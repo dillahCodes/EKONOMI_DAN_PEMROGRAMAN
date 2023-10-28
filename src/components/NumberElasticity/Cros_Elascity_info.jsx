@@ -27,7 +27,7 @@ const ForYourInfoCrossElascityEng = ({ number }) => {
   return number > 0 ? (
     <div>
       <MathComponent tex={String.raw`Ec = ${number}`} />
-      <p>This means that Ec &gt; 0, Barang &quot;X&quot; is a substitute for Barang &quot;Y&quot;. An increase in the price of Barang &quot;Y&quot; makes the relative price of Barang &quot;X&quot; cheaper, leading to an increase in demand for Barang &quot;X&quot;.</p>
+      <p>This means that Ec &gt; 0, &ldquo;X&rdquo; is a substitute for &ldquo;Y.&rdquo; An increase in the price of &ldquo;Y&rdquo; makes &ldquo;X&rdquo; relatively cheaper, leading to an increase in the demand for &ldquo;X.&rdquo;</p>
     </div>
   ) : (
     <div>
