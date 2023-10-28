@@ -15,6 +15,7 @@ import ChangeInSupply from "./pages/changeInSupplyPage";
 import ChangeInDemandAndSupply from "./pages/changeInDemandAndSupplyPage";
 import PriceElasticityOfDemand from "./pages/priceElasticityOfDemand";
 import CrossPriceElasticity from "./pages/crossPriceElasticity";
+import IncomeElasticityOfDemand from "./pages/incomeElasticityOfDemand";
 
 // fungsi untuk memuat halaman dari atas
 function ScrollToTop() {
@@ -128,6 +129,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <CrossPriceElasticity />
+      </Layout>
+    ),
+  },
+  {
+    path: "/IncomeElasticityOfDemand",
+    element: (
+      <Layout>
+        <IncomeElasticityOfDemand />
       </Layout>
     ),
   },

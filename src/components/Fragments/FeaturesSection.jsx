@@ -13,6 +13,7 @@ const FeaturesSection = () => {
     { title: "Impact of Subsidy on Market Equilibrium (Pengaruh Subsidi Terhadap Keseimbangan Pasar) ", description: ["calculate the Impact of Subsidy on Market Equilibrium🧮", "Market Equilibrium with Impact of Subsidy on Market Equilibrium curve📈"], Url: "/comingSoon", status: "coming_soon" },
     { title: "Price Elasticity Of Demand  (Elastisitas Harga Permintaan) ", description: ["calculate the Price Elasticity Of Demand🧮"], Url: "/PriceElasticityOfDemand", status: "available" },
     { title: "Cross Price Elasticity of  demand (Elastisitas permintaan Silang)", description: ["calculate the Cross Price Elasticity  Of Demand🧮"], Url: "/CrossPriceElasticity", status: "available" },
+    { title: "income elasticity of demand (Elastisitas permintaan pendapatan Silang)", description: ["calculate the Cross Price Elasticity  Of Demand🧮"], Url: "/IncomeElasticityOfDemand", status: "available" },
   ];
 
   return (
