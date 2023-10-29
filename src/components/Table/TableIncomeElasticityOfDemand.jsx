@@ -40,7 +40,7 @@ const TableIncomeElasticityOfDemand = ({ getAllValue }) => {
             <td>
               {/* price 1 */}
               <div className="w-[full]">
-                <InputValue placeholder={"price 1"} onChange={(event) => ONCHANGE_VALUE_HANDLER("PRICE_1", event)} />
+                <InputValue placeholder={"income 1"} onChange={(event) => ONCHANGE_VALUE_HANDLER("PRICE_1", event)} />
               </div>
             </td>
             {/* quantity Qd */}
@@ -58,7 +58,7 @@ const TableIncomeElasticityOfDemand = ({ getAllValue }) => {
             <td>
               {" "}
               <div className="w-[full]">
-                <InputValue placeholder={"price 2"} onChange={(event) => ONCHANGE_VALUE_HANDLER("PRICE_2", event)} />
+                <InputValue placeholder={"income 2"} onChange={(event) => ONCHANGE_VALUE_HANDLER("PRICE_2", event)} />
               </div>
             </td>
             {/* quantity 2 */}
